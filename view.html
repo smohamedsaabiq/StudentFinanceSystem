@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>All Records</title>
+
+</head>
+
+<body>
+
+<h2>All Income and Expense</h2>
+
+<table border="1">
+
+<tr>
+
+<th>Type</th>
+<th>Name</th>
+<th>Amount</th>
+
+</tr>
+
+{% for item in data %}
+
+<tr>
+
+<td>{{ item.type }}</td>
+
+<td>
+
+{% if item.type == "income" %}
+{{ item.source }}
+{% else %}
+{{ item.item }}
+{% endif %}
+
+</td>
+
+<td>{{ item.amount }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>

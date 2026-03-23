@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Expense</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f0f2f5;
+text-align:center;
+padding-top:100px;
+}
+
+.box{
+background:white;
+width:400px;
+margin:auto;
+padding:30px;
+border-radius:10px;
+box-shadow:0px 0px 10px gray;
+}
+
+input{
+width:80%;
+padding:10px;
+margin:10px;
+}
+
+button{
+padding:10px 20px;
+background:#dc3545;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#a71d2a;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Add Expense</h2>
+
+<form method="POST">
+
+<input type="text" name="item" placeholder="Expense Item">
+
+<br>
+
+<input type="number" name="amount" placeholder="Amount">
+
+<br>
+
+<button type="submit">Add Expense</button>
+
+</form>
+
+<br>
+
+<a href="/">Back</a>
+
+</div>
+
+</body>
+</html>

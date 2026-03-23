@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Finance Report</title>
+
+<style>
+body{
+font-family:Arial;
+background:#f0f2f5;
+text-align:center;
+padding:40px;
+}
+
+table{
+margin:auto;
+border-collapse:collapse;
+width:60%;
+background:white;
+}
+
+th,td{
+padding:10px;
+border:1px solid gray;
+}
+
+th{
+background:#4facfe;
+color:white;
+}
+
+.summary{
+margin-top:30px;
+font-size:18px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Finance Report</h2>
+
+<h3>Income</h3>
+
+<table>
+
+<tr>
+<th>Source</th>
+<th>Amount</th>
+</tr>
+
+{% for i in income %}
+<tr>
+<td>{{ i.source }}</td>
+<td>₹{{ i.amount }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<br>
+
+<h3>Expenses</h3>
+
+<table>
+
+<tr>
+<th>Item</th>
+<th>Amount</th>
+</tr>
+
+{% for e in expense %}
+<tr>
+<td>{{ e.item }}</td>
+<td>₹{{ e.amount }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<div class="summary">
+
+<p><b>Total Income:</b> ₹{{total_income}}</p>
+<p><b>Total Expense:</b> ₹{{total_expense}}</p>
+<p><b>Balance:</b> ₹{{balance}}</p>
+<h3 style="color:red;">
+
+{% if highest_expense %}
+
+Highest Expense :
+₹{{ highest_expense.amount }}
+on
+{{ highest_expense.item }}
+
+{% else %}
+
+Highest Expense : ₹0
+
+{% endif %}
+
+</h3>
+<h3 style="color:green;">
+{{alert_message}}
+</h3>
+
+</div>
+
+<br>
+
+<a href="/">Back to Home</a>
+
+</body>
+</html>
